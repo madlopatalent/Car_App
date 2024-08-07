@@ -1,0 +1,24 @@
+GET https://bootcamp.projectcodex.co/cars.json
+###
+GET http://localhost:3005/api/most-popular-cars
+###
+DELETE http://localhost:3005/api/cars/{reg_number} HTTP/1.1
+###
+POST http://localhost:3005/api/cars HTTP/1.1
+Content-Type: application/json
+
+{
+    "model": "Toyota",
+    "make": "Quest",
+    "color": "black",
+    "reg_number": 224 
+}
+###
+PUT http://localhost:3005/api/cars/CL 61045 HTTP/1.1
+Content-Type: application/json
+
+{
+    "make": "Toyota", 
+    "model": "Quest", 
+    "color": "black"
+}
