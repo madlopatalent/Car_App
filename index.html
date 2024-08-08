@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Most Popular Car Model</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    .container {
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+
+    h1, h2, h3 {
+        color: #333;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        margin-top: 20px;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+    }
+
+    button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1em;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    input {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .result {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #e9ecef;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    #updateCarForm {
+        margin-top: 20px;
+    }
+
+    #updateCarResult {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #e9ecef;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Find the Most Popular Car Model</h1>
+        <button id="fetchPopularCar">G et Most Popular Car Model</button>
+        <div id="carResult" class="result"></div>
+    </div>
+
+    <h2>Add Car</h2>
+    <form id="addCarForm">
+        <input id="color" type="text" placeholder="Color" required>
+        <input id="model" type="text" placeholder="Model" required>
+        <input id="make" type="text" placeholder="Make" required>
+        <input id="reg_number" type="text" placeholder="Registration Number" required>
+        <button type="submit">Add Car</button>
+    </form>
+
+
+    <h2>Remove Car</h2>
+    <form id="removeCarForm">
+        <input id="reg_numberToRemove" type="text" placeholder="Registration Number" required>
+        <button type="submit">Remove Car</button>
+    </form>
+    </div>
+
+    <form id="updateCarForm">
+        <h3>Update Car</h3>
+        <label for="updateRegNumber">Registration Number:</label>
+        <input type="text" id="updateRegNumber" name="updateRegNumber" required>
+        <br>
+        <label for="updateMake">Make:</label>
+        <input type="text" id="updateMake" name="updateMake" required>
+        <br>
+        <label for="updateModel">Model:</label>
+        <input type="text" id="updateModel" name="updateModel" required>
+        <br>
+        <label for="updateColor">Color:</label>
+        <input type="text" id="updateColor" name="updateColor" required>
+        <br>
+        <button type="submit">Update Car</button>
+    </form>
+    <div id="updateCarResult"></div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+
+
+</body>
+
+</html>
