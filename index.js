@@ -208,7 +208,7 @@ let carData = [
         "reg_number": "CK 41166"
     }
 ]
-// Endpoint to get the most popular car
+
 app.get('/api/most-popular-cars', (req, res) => {
     const mostPopularCar = findMostPopularCar(carData);
     res.json(mostPopularCar);
@@ -216,7 +216,6 @@ app.get('/api/most-popular-cars', (req, res) => {
 app.post('/api/cars', (req, res) => {
     const newCar = req.body;
 
-    // Validate the incoming data (e.g., check if required fields are present)
     if (!newCar.model || !newCar.make || !newCar.color || !newCar.reg_number) {
         return res.status(400).json({ error: 'All fields are required' });
     }
@@ -224,10 +223,10 @@ app.post('/api/cars', (req, res) => {
     // Add the new car to the array
     carData.push(newCar)
     console.log(carData.length)
-    // Send a response confirming the addition
+   
     res.status(201).json({ message: 'Car added successfully', car: newCar });
 });
-// Endpoint to remove a car by registration number
+
 app.delete('/api/cars/:reg_number', (req, res) => {
     const regNumber = req.params.reg_number;
     const initialLength = carData.length;
@@ -244,19 +243,19 @@ app.put('/api/cars/:reg_number', (req, res) => {
     const regNumber = req.params.reg_number;
     const updatedCar = req.body;
 
-    // Validate the incoming data
+   
     if (!updatedCar.make || !updatedCar.model || !updatedCar.color) {
         return res.status(400).json({ error: 'Make, model, and color are required fields' });
     }
 
-    // Find the car to update
+ 
     const carIndex = carData.findIndex(car => car.reg_number === regNumber);
 
     if (carIndex === -1) {
         return res.status(404).json({ error: 'Car not found' });
     }
 
-    // Update the car details
+  
     carData[carIndex] = { ...carData[carIndex], ...updatedCar };
 
     res.status(200).json({ message: 'Car updated successfully', car: carData[carIndex] });
