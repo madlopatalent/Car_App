@@ -27,6 +27,7 @@
     "dev": "nodemon index.js",
     "start": "node src/index.js",
     "test": "mocha",
+    "build": "next build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -38,6 +39,6 @@
   "devDependencies": {
     "chai": "^5.1.1",
     "gh-pages": "^6.1.1",
-    "mocha": "^10.7.0"
+    "mocha": "^10.7.3"
   }
 }
