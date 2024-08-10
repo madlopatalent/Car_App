@@ -1,7 +1,7 @@
 // test/findMostPopularCar.tests.js
 
-import { expect } from 'chai';  // Import Chai's expect function
-import findMostPopularCar from '../findMostPopularCar.js';  // Import the function to test
+import { expect } from 'chai';
+import findMostPopularCar from '../findMostPopularCar.js'; 
 
 describe('findMostPopularCar', function() {
     it('should return the most popular car when there is a clear winner', function() {
